@@ -97,7 +97,7 @@ def train(args):
             train_sampler.set_epoch(epoch)
         adjust_learning_rate(optimizer, epoch, args.lr, args.annealing)
 
-        # update(train_loader, model, criterion, optimizer, epoch, args, swa_model)
+        update(train_loader, model, criterion, optimizer, epoch, args, swa_model)
         
         model.eval()
         acc1, ig, fgsm, pgd = validate(val_loader, model, criterion, args)

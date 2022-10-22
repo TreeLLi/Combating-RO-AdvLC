@@ -31,7 +31,7 @@ parser.add_argument('-v', '--version', choices=['acc', 'swa_pgd', 'swa_end', 'pg
 parser.add_argument('-t', '--transfer',
                     help="the log id of model whose adversarial examples to be transferred")
 
-parser.add_argument('-a', '--attack', choices=['FGSM', 'FGM', 'AA','PGD', 'BA', 'HSJ', 'CW', 'APGD'],
+parser.add_argument('-a', '--attack', choices=['FGM', 'AA','PGD', 'APGD'],
                     type=upper,
                     default=None,
                     help="attack method for crafting adversarial examples")

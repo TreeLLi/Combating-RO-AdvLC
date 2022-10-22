@@ -28,7 +28,6 @@ ATTACK = {
     'PGD' : PGD,
     'APGD' : APGD,
     'AA' : AutoAttack,
-    'AA+' : AutoAttack
 }
 
 HP_MAP = {
@@ -47,8 +46,6 @@ def fetch_attack(attack, model, **config):
 
     if attack == 'AA':
         config['version'] = 'standard'
-    elif attack == 'AA+':
-        config['version'] = 'plus'
 
     if 'seed' in config and config['seed'] is None:
         config['seed'] = 0

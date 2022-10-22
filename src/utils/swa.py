@@ -48,7 +48,7 @@ def bn_update(loader, model):
     model.apply(reset_bn)
     model.apply(lambda module: _get_momenta(module, momenta))
     n = 0
-    for _, input, _ in loader:
+    for input, _ in loader:
         input = input.cuda()
         b = input.data.size(0)
 
