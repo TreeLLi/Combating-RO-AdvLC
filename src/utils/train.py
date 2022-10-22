@@ -187,13 +187,12 @@ def update(loader, model, criterion, optimizer, epoch, args, swa_model):
         batch_size = len(img)
 
         cle = tc.clamp(img+prt, 0, 1).requires_grad_(True)
-        prt = cle - img
         lgt_cle = model(cle)
         loss = criterion(lgt_cle, tgt)
         
         ig = grad(loss, cle, retain_graph=True, create_graph=False)[0]
         ig_norm = tc.norm(ig, p=1)
-        adv, prt = pgd(img, tgt, model, criterion, eps, step, args.max_iter, prt, ig)
+        adv, prt = pgd(cle, tgt, model, criterion, eps, step, args.max_iter, ig)
 
         lgt_adv = model(adv)
         opt = lgt_adv
