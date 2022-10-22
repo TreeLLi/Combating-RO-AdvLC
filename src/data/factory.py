@@ -29,7 +29,7 @@ def fetch_dataset(dataset, root, train=True, input_dim=None, split=False, downlo
     if train:
         augment = T.Compose([
             T.RandomHorizontalFlip(),
-            T.RandomCrop(input_dim[-1]),
+            T.RandomCrop(input_dim[-1], padding=4),
             T.ToTensor()
         ])
     else:
