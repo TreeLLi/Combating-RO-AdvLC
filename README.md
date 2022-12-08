@@ -1,5 +1,6 @@
 # Understanding and Combating Robust Overfitting via Input Loss Landscape Anlaysis and Regularization	
 
+This repository contains code of algorithm AdvLC and pre-trained models from the paper (published in Pattern Recognition 2022) "[Understanding and Combating Robust Overfitting via Input Loss Landscape Anlaysis and Regularization](https://www.sciencedirect.com/science/article/pii/S0031320322007087)". 
 
 # Pre-trained Models
 
